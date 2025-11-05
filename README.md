@@ -35,12 +35,20 @@
 
 ## Screenshots
 
-- `screenshots/users-list.png` — All users in the tenant  
-- `screenshots/groups-list.png` — All security groups created  
-- `screenshots/support-agents-members.png` — Members of GG-Support-Agents  
-- `screenshots/contractors-members.png` — Members of GG-Contractors  
-- `screenshots/mav-user-admin.png` — Maverick assigned User Administrator role  
-- `screenshots/nate-password-admin.png` — Nathan assigned Password Administrator role  
+   ### Users
+      ![Users List](screenshots/users-list.png)
+
+   ### Groups
+      ![Groups List](screenshots/groups-list.png)
+
+   ### Group Memberships
+      ![Support Agents Members](screenshots/support-agents-members.png)
+      ![Contractors Members](screenshots/contractors-members.png)
+
+   ### Role Assignments
+      ![Maverick User Administrator](screenshots/mav-user-admin.png)
+      ![Nathan Password Administrator](screenshots/nate-password-admin.png)
+
 
 ## What I Learned
 - How to create and manage identities in Microsoft Entra ID  
