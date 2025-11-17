@@ -132,7 +132,7 @@ This is **Project 1** of a 4-project enterprise IAM series.
 
 ---
 
-##▶️ Next Project
+## Next Project
 
 **Project 2 — Enforce MFA for All Users**  
 🔗 https://github.com/CoachKosik/azure-ad-mfa-enforcement
