@@ -29,7 +29,6 @@ This is **Project 1** of a 4-project enterprise IAM series.
 - [Role Assignments](#-role-assignments)
 - [Security Rationale](#-security-rationale)
 - [Next Project → MFA Enforcement](#-next-project)
-- [Next Project → MFA Enforcement](#-next-project)
 - [Repo Structure](#-repo-structure)
 
 ---
