@@ -24,16 +24,17 @@
 - [Repo Structure](#repo-structure)
 
 ---
-
-## 🎯 Objective
+<details open>
+  <summary><h2 id="objective">
+## 🎯 Objective</h2></summary>
 This lab establishes **foundational identity administration skills** inside Microsoft Entra ID (Azure AD):
 
-### ✔️ Created & managed identities  
-### ✔️ Implemented role-based access control (RBAC)  
-### ✔️ Built security groups with least-privilege design  
-### ✔️ Assigned scoped directory roles—*not global roles*  
+✔ Created & managed identities  
+✔ Implemented role-based access control (RBAC)  
+✔ Built security groups with least-privilege design  
+✔ Assigned scoped directory roles—_not_ global roles  
 
-This project mirrors real enterprise identity governance practices required for modern IAM analyst / admin roles.
+This project mirrors real enterprise identity governance practices required for modern IAM analyst/admin roles.
 
 ---
 
@@ -43,8 +44,8 @@ This project mirrors real enterprise identity governance practices required for 
 |----------|----------------|---------|
 | Users | First + Last | Human identities only |
 | Groups | `GG-*` | Role-based permissions |
-| Roles | Scoped admin | NO global admins granted |
-| Admin Separation | YES | Different users hold different admin roles |
+| Roles | Scoped admin | No global admins |
+| Admin Separation | YES | Enforced Segregation of Duties |
 
 ---
 
@@ -52,11 +53,11 @@ This project mirrors real enterprise identity governance practices required for 
 
 | User | Purpose |
 |------|---------|
-| **Maverick Blaze** | IT Support — user admin duties |
-| **Nathan Dash** | Helpdesk — password reset duties |
-| **Leah Vanta** | Contractor — no privileged access |
-| **Dawsyn Echo** | Contractor — no privileged access |
-| **Eddie Spark** | Contractor — no privileged access |
+| Maverick Blaze | User admin duties |
+| Nathan Dash | Password reset duties |
+| Leah Vanta | Contractor — restricted |
+| Dawsyn Echo | Contractor — restricted |
+| Eddie Spark | Contractor — restricted |
 
 ---
 
@@ -64,37 +65,33 @@ This project mirrors real enterprise identity governance practices required for 
 
 | Group | Members | Purpose |
 |-------|---------|---------|
-| `GG-Support-Agents` | Maverick, Nathan | Internal helpdesk team |
-| `GG-Contractors` | Leah, Dawsyn, Eddie | Restricted access pool |
+| GG-Support-Agents | Maverick, Nathan | Internal Helpdesk |
+| GG-Contractors | Leah, Dawsyn, Eddie | Restricted access |
 
 ---
 
 ## 🔐 RBAC Role Assignments
 
-| User | Role Assigned | Reason |
-|------|--------------|--------|
-| **Maverick Blaze** | **User Administrator** | Needs to create/modify users |
-| **Nathan Dash** | **Password Administrator** | Handles only password resets |
-| **Contractor Accounts** | **None** | Enforced least privilege |
+| User | Role | Reason |
+|------|------|--------|
+| Maverick Blaze | User Administrator | Needs to manage accounts |
+| Nathan Dash | Password Administrator | Reset only |
+| Contractors | None | No privileged access |
 
 ---
 
 ## 🛡 Least Privilege Justification
 
-### ✔ Segregation of Duties
-No single user can modify identities **and** reset passwords  
-➡️ Prevents abuse & reduces breach blast radius
+✔ **Segregation of Duties**  
+No single user can create AND reset accounts  
 
-### ✔ Contractors Receive Zero Administrative Rights
-Because contractors often:
-- Work temporarily
-- Operate outside governance controls
-- Pose higher insider risk
+✔ **Contractor No-Privilege Design**  
+Controls insider risk surface  
 
-### ✔ RBAC Instead of Global Admin
-Enterprise security frameworks **require** limited privilege:
+✔ **Scoped admin roles only**  
+➡ Matches CIS, ISO, and Microsoft Zero Trust guidance  
 
-> *“If a user doesn’t need it, they shouldn’t have it.”*
+> _If a user doesn’t need it, they don’t get it._
 
 ---
 
@@ -103,62 +100,67 @@ Enterprise security frameworks **require** limited privilege:
 <details>
 <summary><strong>👤 Users</strong></summary>
 
-📁 screenshots/
-│── users-list.png
-
-css
+screenshots/
+├─ users-list.png
+</details> <details> <summary><strong>👥 Groups</strong></summary>
+txt
 Copy code
-
-</details>
-
-<details>
-<summary><strong>👥 Groups</strong></summary>
-
-📁 screenshots/
-│── groups-list.png
-│── support-agents-members.png
-│── contractors-members.png
-
-css
+screenshots/
+├─ groups-list.png
+├─ support-agents-members.png
+├─ contractors-members.png
+</details> <details> <summary><strong>🛡 Role Assignments</strong></summary>
+txt
 Copy code
-
+screenshots/
+├─ mav-user-admin.png
+├─ nate-password-admin.png
 </details>
+🧠 What I Learned
+Entra ID identity structure & governance model
 
-<details>
-<summary><strong>🛡 Role Assignments</strong></summary>
+RBAC design and security justification
 
-📁 screenshots/
-│── mav-user-admin.png
-│── nate-password-admin.png
+How to document IAM decisions for auditors
 
-yaml
+Why contractors must be isolated and scoped
+
+▶️ Next Project
+Project 2 — Enforce MFA for All Users
+🔗 https://github.com/CoachKosik/azure-ad-mfa-enforcement
+
+📂 Repo Structure
+txt
 Copy code
-
-</details>
+Azure-AD-Entra-ID-Identity-Basics-Lab/
+│ README.md
+└── screenshots/
+    ├─ identity_basics_banner.png
+    ├─ users-list.png
+    ├─ groups-list.png
+    ├─ support-agents-members.png
+    ├─ contractors-members.png
+    ├─ mav-user-admin.png
+    ├─ nate-password-admin.png
 
 ---
 
 ## 🧠 What I Learned
-
-- How Microsoft Entra ID structures identities, groups, and directory roles  
-- Why RBAC is mandatory in real-world IAM programs  
-- How to enforce **Segregation of Duties (SoD)** for identity safety  
-- How to document IAM decisions for audit + compliance evidence  
-- That **access governance > technical access** — justification matters
+- Entra ID identity structure & governance model  
+- RBAC design and security justification  
+- How to document IAM decisions for auditors  
+- Why contractors must be isolated and scoped  
 
 ---
 
 ## ▶️ Next Project
-
-**Project 2 — MFA Enforcement Lab**  
-➡ Enforce Microsoft Authenticator MFA using Authentication Method Policies  
-➡ Includes registration campaign + enforcement logic  
+**Project 2 — Enforce MFA for All Users**  
 🔗 https://github.com/CoachKosik/azure-ad-mfa-enforcement
 
 ---
 
 ## 📂 Repo Structure
-
+```txt
 Azure-AD-Entra-ID-Identity-Basics-Lab/
 │ README.md
 └── screenshots/
