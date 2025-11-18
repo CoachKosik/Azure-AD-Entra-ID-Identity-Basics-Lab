@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="screenshots/identity_basics_banner.png" width="100%">
+  <img src="screenshots/project_1_banner.png" width="100%">
 </p>
 
 <h1 align="center">🔐 Project 1 — Microsoft Entra ID Identity Basics Lab</h1>
