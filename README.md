@@ -135,7 +135,7 @@ This is **Project 1** of a 4-project enterprise IAM series.
 ## ➤ Next Project
 
 **Project 2 — Enforce MFA for All Users**  
-🔗 https://github.com/CoachKosik/entra-id-mfa-enforcement
+🔗 [https://github.com/CoachKosik/entra-id-mfa-enforcement](https://github.com/CoachKosik/Project-2-Enforce-Multi-Factor-Authentication-MFA/blob/main/README.md)
 
 ---
 
